@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 20px;
+    }
+
+    h3 {
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+
+    table {
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Welcome {{people.first_name}} {{people.last_name}}!</h1>
+      <button><a href="/create">Add Painting</a></button>
+      <button><a href="/logout">Logout</a></button>
+    </div>
+    <h3>Paintings</h3>
+    <div class="painting-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%for user in users%}
+          <tr>
+            <td><a href="/show/{{user.id}}">{{user.title}}</a></td>
+            <td>by {{user.first_name}} {{user.last_name}}</td>
+            <td>
+              {%if user.user_id == session['user_id']%}
+              <a href="/edit/{{user.id}}">Edit</a>
+              <a href="/delete/{{user.id}}">Delete</a>
+              {%endif%}
+            </td>
+          </tr>
+          {%endfor%}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 400px;
+      background-color: grey;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="/create" method="post" class="form">
+    <h1>Dojo Survey</h1>
+    <div class="form-body">
+      <label for="name">Your Name: </label>
+      <input type="text" name="name" id="name">
+    </div>
+    <div class="form-body">
+      <label for="location">Dojo Location</label>
+      <select name="location" id="location">
+        <option value="San Jose">San Jose</option>
+        <option value="Seattle">Seattle</option>
+        <option value="Chicago">Chicago</option>
+        <option value="Online">Online</option>
+      </select>
+    </div>
+    <div class="form-body">
+      <label for="language">Favorite language</label>
+      <select name="language" id="language">
+
+        <option value="Python">Python</option>
+        <option value="Java">Java</option>
+        <option value="Javascript">Javascript</option>
+        <option value="Html">Html</option>
+      </select>
+    </div>
+    <div class="form-body">
+      <label for="comment">Comments:</label>
+      <br>
+      <textarea name="comment" id="comment" cols="20" rows="4"></textarea>
+    </div>
+    <input type="submit" value="Submit" class="btn">
+  </form>
+
+
+</body>
+
+</html>
